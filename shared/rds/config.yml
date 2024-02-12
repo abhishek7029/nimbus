@@ -1,7 +1,6 @@
 common:
-  project_name_prefix: "aspen"
-  project: "aspen"
+  project_name_prefix: "nimbus"
+  project: "nimbus"
   tags:
     "Feature": "shared-services"
-    "Project": "aspen"
-    "map-migrated": "mig6LY0ZX3LV3"
+    "Project": "nimbus"

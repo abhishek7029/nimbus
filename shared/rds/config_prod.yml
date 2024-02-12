@@ -1,8 +1,8 @@
 workspace:
   aws:
-    account_id: 819705159201
+    account_id: 223865032204
     role: ""
-    profile: "nimbus"
+    profile: "default"
     region: "us-east-1"
   common:
     environment: "prod"
@@ -10,6 +10,7 @@ workspace:
       "Module": "RDS"
 
   rds:
+    vpc_id: "vpc-041e7979"
     parameter_family: "aurora-mysql8.0"
     cluster_engine: "aurora-mysql"
     cluster_engine_version: "8.0.mysql_aurora.3.05.2"

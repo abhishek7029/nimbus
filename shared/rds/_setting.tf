@@ -6,7 +6,7 @@ locals {
   workspace_common = local.workspace["common"]
   workspace_aws    = local.workspace["aws"]
 
-  service_name_prefix = "${local.common["project_name_prefix"]}"
+  service_name_prefix = local.common["project_name_prefix"]
   common_tags = merge(
     local.common["tags"],
     local.workspace_common["tags"],
