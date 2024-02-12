@@ -1,0 +1,23 @@
+workspace:
+  aws:
+    account_id: 819705159201
+    role: ""
+    profile: "aspen"
+    region: "us-east-1"
+  common:
+    environment: "non-prod"
+    tags:
+      "Module": "EC2/INSTANCE/AIRFLOW"
+      "Backup": "enable"
+
+  ec2:
+    name: "airflow"
+    instance_type: "t2.medium"
+    keyname: "non-prod-aspen"
+    disable_api_termination: true
+    volume_size: 100
+    volume_type: "gp3"
+    delete_on_termination: true
+    encrypted: true
+    monitoring: false
+    ami: "ami-0fc5d935ebf8bc3bc"

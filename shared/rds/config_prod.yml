@@ -1,0 +1,19 @@
+workspace:
+  aws:
+    account_id: 819705159201
+    role: ""
+    profile: "nimbus"
+    region: "us-east-1"
+  common:
+    environment: "prod"
+    tags:
+      "Module": "RDS"
+
+  rds:
+    parameter_family: "aurora-mysql8.0"
+    cluster_engine: "aurora-mysql"
+    cluster_engine_version: "8.0.mysql_aurora.3.05.2"
+    instance_type: "db.t4g.medium"
+    preferred_backup_window : "22:00-23:00"
+    maintenance_window: "Sun:21:00-Sun:22:00"
+    database_name: "aspen"

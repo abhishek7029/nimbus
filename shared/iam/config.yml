@@ -1,0 +1,7 @@
+common:
+  project_name_prefix: "nimbus"
+  project: "nimbus"
+  tags:
+    "Feature": "shared-services"
+    "Project": "nimbus"
+  

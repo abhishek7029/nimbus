@@ -1,0 +1,39 @@
+workspace:
+  aws:
+    account_id: 819705159201
+    role: ""
+    profile: "aspen"
+    region: "us-east-1"
+  common:
+    environment: "non-prod"
+    tags:
+      "Module": "EC2/SG"
+
+  security_group:
+    jenkins:
+      outbound:
+        - from_port: 443
+          to_port: 443
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Allow download packages temporarily"
+        - from_port: 80
+          to_port: 80
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Allow download packages temporarily"
+    data-validation:
+      inbound:
+        - from_port: 22
+          to_port: 22
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "ssh-anywhere"
+      outbound:
+        - from_port: 443
+          to_port: 443
+          protocol: "tcp"
+          cidr_blocks: [ "0.0.0.0/0" ]
+          description: "Allow download packages temporarily"
+
+

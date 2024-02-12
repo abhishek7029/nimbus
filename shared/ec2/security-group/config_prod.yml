@@ -1,0 +1,76 @@
+workspace:
+  aws:
+    account_id: 577926707822
+    role: ""
+    profile: "aspen"
+    region: "us-east-1"
+  common:
+    environment: "prod"
+    tags:
+      "Module": "EC2/SG"
+
+  security_group:
+    airflow:
+      inbound:
+        - from_port: 22
+          to_port: 22
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "ssh-anywhere"
+        - from_port: 8080
+          to_port: 8080
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "ssh-anywhere"
+      outbound:
+        - from_port: 443
+          to_port: 443
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Allow download packages temporarily"
+        - from_port: 80
+          to_port: 80
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Allow download packages temporarily"
+    jenkins:
+      outbound:
+        - from_port: 443
+          to_port: 443
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Allow download packages temporarily"
+        - from_port: 80
+          to_port: 80
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Allow download packages temporarily"
+        - from_port: 22
+          to_port: 22
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "Gitlab"
+
+    data-validation:
+      inbound:
+        - from_port: 22
+          to_port: 22
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "ssh-anywhere"
+      outbound:
+        - from_port: 443
+          to_port: 443
+          protocol: "tcp"
+          cidr_blocks: [ "0.0.0.0/0" ]
+          description: "Allow download packages temporarily"
+        - from_port: 22
+          to_port: 22
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "ssh-anywhere"
+        - from_port: 587
+          to_port: 587
+          protocol: "tcp"
+          cidr_blocks: ["0.0.0.0/0"]
+          description: "sending mail"

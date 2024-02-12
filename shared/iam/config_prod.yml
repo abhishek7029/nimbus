@@ -1,0 +1,13 @@
+workspace:
+  aws:
+    account_id: 223865032204
+    role: ""
+    profile: "default"
+    region: "us-east-1"
+  common:
+    environment: "prod"
+    tags:
+      "Module": "IAM/ROLE"
+
+  iam:
+    path: "/"

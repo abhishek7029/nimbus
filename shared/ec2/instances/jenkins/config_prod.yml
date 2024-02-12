@@ -1,0 +1,22 @@
+workspace:
+  aws:
+    account_id: 577926707822
+    role: ""
+    profile: "aspen"
+    region: "us-east-1"
+  common:
+    environment: "prod"
+    tags:
+      "Module": "EC2/INSTANCE/JENKINS"
+      "Backup": "enable"
+
+  ec2:
+    name: "jenkins"
+    instance_type: "t4g.large"
+    keyname: "prod-key"
+    disable_api_termination: true
+    volume_size: 100
+    volume_type: "gp3"
+    delete_on_termination: true
+    encrypted: true
+    monitoring: false
